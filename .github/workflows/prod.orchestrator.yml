@@ -21,3 +21,5 @@ jobs:
     - uses: ./.github/actions/deploy-az-resource
       with:
         az_rg_n: ${{ env.RG_N }}
+        SQL_ADMIN_LOGIN: ${{ secrets.SQL_ADMIN_LOGIN }}
+        SQL_ADMIN_PASSWORD: ${{ secrets.SQL_ADMIN_PASSWORD }}
