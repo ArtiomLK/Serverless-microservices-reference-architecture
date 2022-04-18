@@ -21,7 +21,7 @@ param resourceTags object = {
 param  location string = resourceGroup().location
 
 var functionAppServicePlanName = '${applicationName}Plan'
-var keyVaultName = toLower('kv-${applicationName}')
+var keyVaultName = toLower('kv-${applicationName}-${location}')
 var cosmosdbName = '${applicationName}Cosmos'
 var eventGridName = '${applicationName}TripExternalizations'
 var signalRName = applicationName
