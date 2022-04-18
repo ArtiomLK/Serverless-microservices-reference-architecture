@@ -9,6 +9,7 @@ var tags = {
 }
 
 param location string = 'eastus2'
+param project_n string = 'iPaaSRefArchitecture'
 
 @secure()
 param sql_admin_login string
@@ -26,7 +27,7 @@ module sererlessMicroservices '../bicep/main.bicep' = {
     sqlAdminLogin: sql_admin_login
     sqlAdminPassword: sql_admin_password
     staticWebAppLocation: location
-    applicationName: 'iPaaSRefArchitecture'
+    applicationName: project_n
     location: location
     resourceTags: tags
   }
