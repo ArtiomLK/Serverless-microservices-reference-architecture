@@ -9,7 +9,7 @@ var tags = {
 }
 
 param location string = 'eastus2'
-param project_n string = 'iPaaSRefArchitecture'
+param project_n string = 'iPaaS'
 
 @secure()
 param sql_admin_login string

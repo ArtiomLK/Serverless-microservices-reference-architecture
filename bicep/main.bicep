@@ -8,10 +8,12 @@ param applicationName string = 'Rideshare'
   'westus2'
 ])
 param staticWebAppLocation string
-param sqlAdminLogin string
 
 @secure()
+param sqlAdminLogin string
+@secure()
 param sqlAdminPassword string
+
 param resourceTags object = {
   ProjectType: 'Azure Serverless Microservices'
   Purpose: 'Sample'
@@ -92,6 +94,7 @@ module apim 'modules/apim.bicep' = {
     appInsightsName: applicationInsights.outputs.appInsightsName
     appInsightsInstrumentationKey: applicationInsights.outputs.appInsightsInstrumentationKey
     resourceTags: resourceTags
+    location: location
   }
 }
 
@@ -125,6 +128,7 @@ module keyVault 'modules/keyvault.bicep' = {
     functionAppPrefix: applicationName
     functionApps: functionsApps
     resourceTags: resourceTags
+    location: location
   }
   dependsOn: [
     functions

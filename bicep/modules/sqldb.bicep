@@ -1,6 +1,7 @@
 param sqlServerName string
 param sqlDatabaeName string
 param location string
+@secure()
 param administratorLogin string
 @secure()
 param administratorPassword string
