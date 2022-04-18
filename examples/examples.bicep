@@ -8,6 +8,14 @@ var tags = {
   env: 'dev'
 }
 
+@allowed([
+  'centralus'
+  'eastus'
+  'eastus2'
+  'eastasia'
+  'westeurope'
+  'westus2'
+])
 param location string = 'eastus2'
 param project_n string = 'iPaaSRefArchitecture'
 
