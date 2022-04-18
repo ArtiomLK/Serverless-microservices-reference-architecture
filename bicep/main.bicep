@@ -16,8 +16,8 @@ param resourceTags object = {
   ProjectType: 'Azure Serverless Microservices'
   Purpose: 'Sample'
 }
+param  location string = resourceGroup().location
 
-var location = resourceGroup().location
 var functionAppServicePlanName = '${applicationName}Plan'
 var keyVaultName = '${applicationName}KeyVault'
 var cosmosdbName = '${applicationName}Cosmos'
@@ -64,7 +64,7 @@ module eventGrid 'modules/eventgrid.bicep' = {
     eventGridTopicName: eventGridName
     location: location
     resourceTags: resourceTags
-  } 
+  }
 }
 
 module signalR 'modules/signalr.bicep' = {
@@ -73,7 +73,7 @@ module signalR 'modules/signalr.bicep' = {
     signalRName: signalRName
     location: location
     resourceTags: resourceTags
-  } 
+  }
 }
 
 module applicationInsights 'modules/applicationInsights.bicep' = {

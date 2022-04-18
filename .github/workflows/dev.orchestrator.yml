@@ -1,0 +1,29 @@
+on:
+  push:
+    branches:
+      - '*'
+    paths: [ 'bicep/**' ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  RG_N: rg-serverless-microservices-ref-architecture-dev-eastus2
+
+name: DEV - Deploy Azure Resource
+jobs:
+  deploy_to_dev:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      # Checkout code
+    - uses: actions/checkout@v2
+
+      # Log into Azure
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Test Azure Resource Deployment
+    - uses: ./.github/actions/deploy-az-resource
+      with:
+        az_rg_n: ${{ env.RG_N }}
