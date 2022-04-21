@@ -22,7 +22,7 @@ param  location string = resourceGroup().location
 
 var functionAppServicePlanName = 'plan-${applicationName}-${location}'
 var keyVaultName = toLower('kv-${applicationName}-${location}')
-var cosmosdbName = '${applicationName}Cosmos'
+var cosmosdbName = 'cosmos-${applicationName}'
 var eventGridName = '${applicationName}TripExternalizations'
 var signalRName = applicationName
 var applicationInsightsName = 'appi-${applicationName}'
