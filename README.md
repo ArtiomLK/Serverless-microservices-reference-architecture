@@ -18,8 +18,8 @@ description: "This architecture walks you through the process involved in develo
 
 # Serverless Microservices reference architecture
 
-[![.NET](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/dotnet.yml) 
-[![Node.js CI](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/nodejs.yml) 
+[![.NET](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/dotnet.yml)
+[![Node.js CI](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/nodejs.yml)
 [![spa build](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/spa.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/spa.yml)
 
 > This sample has been upgraded to Azure Functions v3. An upgrade to Azure Functions v4 is in progress. See [PR #43](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/pull/43) for details.
@@ -86,3 +86,10 @@ Use the table of contents below for detailed documentation of each component of 
   - [.NET](/documentation/source-code-structure.md#net)
   - [Node.js](/documentation/source-code-structure.md#nodejs)
   - [Web](/documentation/source-code-structure.md#web)
+
+## Additional Information
+
+- Azure AD B2C
+- [MS | Docs | Tutorial: Register a web application in Azure Active Directory B2C][1]
+
+[1]: https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications
