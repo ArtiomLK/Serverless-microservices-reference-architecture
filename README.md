@@ -1,17 +1,17 @@
 ---
 languages:
-- csharp
-- javascript
-- nodejs
+  - csharp
+  - javascript
+  - nodejs
 products:
-- azure
-- azure-functions
-- azure-logic-apps
-- azure-event-grid
-- azure-cosmos-db
-- azure-sql-database
-- azure-storage
-- azure-app-service
+  - azure
+  - azure-functions
+  - azure-logic-apps
+  - azure-event-grid
+  - azure-cosmos-db
+  - azure-sql-database
+  - azure-storage
+  - azure-app-service
 page_type: sample
 description: "This architecture walks you through the process involved in developing the Rideshare by Relecloud application."
 ---
@@ -90,7 +90,7 @@ Use the table of contents below for detailed documentation of each component of 
 ## Notes
 
 1. Manual Steps
-   1. Created a B2C tenant
+   1. [Create the Azure AD B2C tenant][2]
       1. Whithin the B2C tenant
          1. Created app registration with a secret
          2. Created an Applications(Legacy)
@@ -102,3 +102,4 @@ Use the table of contents below for detailed documentation of each component of 
 - [MS | Docs | Tutorial: Register a web application in Azure Active Directory B2C][1]
 
 [1]: https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications
+[2]: https://github.com/ArtiomLK/Serverless-microservices-reference-architecture/blob/main/documentation/setup.md#create-the-azure-ad-b2c-tenant
