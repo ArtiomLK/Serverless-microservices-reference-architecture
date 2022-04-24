@@ -87,6 +87,15 @@ Use the table of contents below for detailed documentation of each component of 
   - [Node.js](/documentation/source-code-structure.md#nodejs)
   - [Web](/documentation/source-code-structure.md#web)
 
+## Notes
+
+1. Manual Steps
+   1. Created a B2C tenant
+      1. Whithin the B2C tenant
+         1. Created app registration with a secret
+         2. Created an Applications(Legacy)
+            1. Created a User UserFlow with policies and claims
+
 ## Additional Information
 
 - Azure AD B2C
