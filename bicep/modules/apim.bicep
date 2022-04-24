@@ -18,7 +18,7 @@ param sku string = 'Developer'
 @minValue(1)
 param skuCount int = 1
 
-var location = resourceGroup().location
+param location string = resourceGroup().location
 var publisherEmail = 'email@contoso.com'
 var publisherName = 'Company Name'
 

@@ -1,4 +1,4 @@
-  
+
 @description('Cosmos DB account name')
 param accountName string
 
@@ -43,12 +43,12 @@ resource cosmosAccount 'Microsoft.DocumentDB/databaseAccounts@2021-06-15' = {
 }
 
 resource cosmosDB 'Microsoft.DocumentDB/databaseAccounts/sqlDatabases@2021-06-15' = {
-  name: '${toLower(databaseName)}'
+  name: toLower(databaseName)
   parent: cosmosAccount
   tags: resourceTags
   properties: {
     resource: {
-      id: '${toLower(databaseName)}'
+      id: toLower(databaseName)
     }
     options: {
       throughput: throughput

@@ -2,6 +2,7 @@ param keyVaultName string
 param functionAppPrefix string
 param functionApps array
 param resourceTags object
+param location string = resourceGroup().location
 
 resource functions 'Microsoft.Web/sites@2021-01-15' existing = [for functionApp in functionApps :{
   name: '${functionAppPrefix}${functionApp}'
@@ -9,7 +10,7 @@ resource functions 'Microsoft.Web/sites@2021-01-15' existing = [for functionApp 
 
 resource keyVault 'Microsoft.KeyVault/vaults@2021-06-01-preview' = {
   name: keyVaultName
-  location: resourceGroup().location
+  location: location
   properties: {
     sku: {
       name: 'standard'

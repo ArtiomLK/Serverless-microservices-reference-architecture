@@ -1,0 +1,25 @@
+on: [release]
+
+env:
+  RG_N: rg-serverless-microservices-ref-architecture-prod-eastus2
+
+name: PROD - Deploy Azure Resource
+jobs:
+  deploy_to_prod:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      # Checkout code
+    - uses: actions/checkout@v2
+
+      # Log into Azure
+    - uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      # Test Azure Resource Deployment
+    - uses: ./.github/actions/deploy-az-resource
+      with:
+        az_rg_n: ${{ env.RG_N }}
+        SQL_ADMIN_LOGIN: ${{ secrets.SQL_ADMIN_LOGIN }}
+        SQL_ADMIN_PASSWORD: ${{ secrets.SQL_ADMIN_PASSWORD }}

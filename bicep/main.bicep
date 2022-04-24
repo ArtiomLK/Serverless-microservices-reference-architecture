@@ -8,22 +8,24 @@ param applicationName string = 'Rideshare'
   'westus2'
 ])
 param staticWebAppLocation string
-param sqlAdminLogin string
 
 @secure()
+param sqlAdminLogin string
+@secure()
 param sqlAdminPassword string
+
 param resourceTags object = {
   ProjectType: 'Azure Serverless Microservices'
   Purpose: 'Sample'
 }
+param  location string = resourceGroup().location
 
-var location = resourceGroup().location
-var functionAppServicePlanName = '${applicationName}Plan'
-var keyVaultName = '${applicationName}KeyVault'
-var cosmosdbName = '${applicationName}Cosmos'
+var functionAppServicePlanName = 'plan-${applicationName}-${location}'
+var keyVaultName = toLower('kv-${applicationName}-${location}')
+var cosmosdbName = 'cosmos-${applicationName}'
 var eventGridName = '${applicationName}TripExternalizations'
 var signalRName = applicationName
-var applicationInsightsName = '${applicationName}Insights'
+var applicationInsightsName = 'appi-${applicationName}'
 var apimName = '${applicationName}Apim'
 var sqlServerName = '${applicationName}-db'
 var staticWebAppName = '${applicationName}Web'
@@ -64,7 +66,7 @@ module eventGrid 'modules/eventgrid.bicep' = {
     eventGridTopicName: eventGridName
     location: location
     resourceTags: resourceTags
-  } 
+  }
 }
 
 module signalR 'modules/signalr.bicep' = {
@@ -73,7 +75,7 @@ module signalR 'modules/signalr.bicep' = {
     signalRName: signalRName
     location: location
     resourceTags: resourceTags
-  } 
+  }
 }
 
 module applicationInsights 'modules/applicationInsights.bicep' = {
@@ -92,6 +94,7 @@ module apim 'modules/apim.bicep' = {
     appInsightsName: applicationInsights.outputs.appInsightsName
     appInsightsInstrumentationKey: applicationInsights.outputs.appInsightsInstrumentationKey
     resourceTags: resourceTags
+    location: location
   }
 }
 
@@ -125,6 +128,7 @@ module keyVault 'modules/keyvault.bicep' = {
     functionAppPrefix: applicationName
     functionApps: functionsApps
     resourceTags: resourceTags
+    location: location
   }
   dependsOn: [
     functions

@@ -1,25 +1,25 @@
 ---
 languages:
-- csharp
-- javascript
-- nodejs
+  - csharp
+  - javascript
+  - nodejs
 products:
-- azure
-- azure-functions
-- azure-logic-apps
-- azure-event-grid
-- azure-cosmos-db
-- azure-sql-database
-- azure-storage
-- azure-app-service
+  - azure
+  - azure-functions
+  - azure-logic-apps
+  - azure-event-grid
+  - azure-cosmos-db
+  - azure-sql-database
+  - azure-storage
+  - azure-app-service
 page_type: sample
 description: "This architecture walks you through the process involved in developing the Rideshare by Relecloud application."
 ---
 
 # Serverless Microservices reference architecture
 
-[![.NET](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/dotnet.yml) 
-[![Node.js CI](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/nodejs.yml) 
+[![.NET](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/dotnet.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/dotnet.yml)
+[![Node.js CI](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/nodejs.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/nodejs.yml)
 [![spa build](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/spa.yml/badge.svg)](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/actions/workflows/spa.yml)
 
 > This sample has been upgraded to Azure Functions v3. An upgrade to Azure Functions v4 is in progress. See [PR #43](https://github.com/Azure-Samples/Serverless-microservices-reference-architecture/pull/43) for details.
@@ -86,3 +86,20 @@ Use the table of contents below for detailed documentation of each component of 
   - [.NET](/documentation/source-code-structure.md#net)
   - [Node.js](/documentation/source-code-structure.md#nodejs)
   - [Web](/documentation/source-code-structure.md#web)
+
+## Notes
+
+1. Manual Steps
+   1. [Create the Azure AD B2C tenant][2]
+      1. Whithin the B2C tenant
+         1. Created app registration with a secret
+         2. Created an Applications(Legacy)
+            1. Created a User UserFlow with policies and claims
+
+## Additional Information
+
+- Azure AD B2C
+- [MS | Docs | Tutorial: Register a web application in Azure Active Directory B2C][1]
+
+[1]: https://docs.microsoft.com/en-us/azure/active-directory-b2c/tutorial-register-applications
+[2]: https://github.com/ArtiomLK/Serverless-microservices-reference-architecture/blob/main/documentation/setup.md#create-the-azure-ad-b2c-tenant
